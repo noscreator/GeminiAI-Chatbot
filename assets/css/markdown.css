@@ -1,0 +1,91 @@
+/* Markdown CSS Styles */
+.content {
+  font-family: Arial, sans-serif;
+  line-height: 1.2;
+}
+
+.content h1 {
+  font-size: 1.8em;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.content h2 {
+  font-size: 1.6em;
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+
+.content h3 {
+  font-size: 1.4em;
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+
+.content h4 {
+  font-size: 1.2em;
+  margin-top: 14px;
+  margin-bottom: 4px;
+}
+
+.content h5 {
+  font-size: 1.1em;
+  margin-top: 12px;
+  margin-bottom: 2px;
+}
+
+.content h6 {
+  font-size: 1em;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+
+.content p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.content ul,
+.content ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+.content li {
+  margin-bottom: 5px;
+}
+
+.content a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.content a:hover {
+  text-decoration: underline;
+}
+
+.content strong,
+.content b {
+  font-weight: bold;
+}
+
+.content em,
+.content i {
+  font-style: italic;
+}
+
+.content code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.content pre {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: #E9E9E9;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+}

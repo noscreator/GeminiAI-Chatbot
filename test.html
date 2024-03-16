@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simple Chat Bot Using Gemini API</title>
+  <link rel="stylesheet" href="./assets/css/main.css">
+
+  <link rel="stylesheet" href="./assets/css/markdown.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Lato:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap">
+
+</head>
+
+<body>
+  <header>
+    <div class="flex"><img class="logo" src="./assets/img/nexosai.jpg" alt="Logo">
+      <h2>Nexos Ai</h2>
+    </div>
+    <button class="menu-btn" onclick="toggleMenu()"><svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+        <g>
+          <path d='M93.53773,266.1295l-7.25984-3.848a1.8661,1.8661,0,0,1,0-3.29762l7.25984-3.848a3.73218,3.73218,0,0,1,3.49574,0l7.25985,3.848a1.8661,1.8661,0,0,1,0,3.29762l-7.25985,3.848A3.73223,3.73223,0,0,1,93.53773,266.1295Z' transform='translate(-83.2856 -252.70127)'></path>
+          <path d='M104.29332,267.12105a1.8661,1.8661,0,0,1,0,3.29762l-7.25985,3.848a3.73223,3.73223,0,0,1-3.49574,0l-7.25984-3.848a1.8661,1.8661,0,0,1,0-3.29762' transform='translate(-83.2856 -252.70127)'></path>
+        </g>
+      </svg></button>
+    <div class="popup-menu" id="popupMenu">
+      <ul>
+        <li>Home</li>
+        <li></li>
+        <li>Youtube</li>
+        <li id="clear-button">Clear All Chat</li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div id="chat-container">
+      <div id="chat-messages">
+      </div>
+      <div id="chat-input">
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button id="send-button"><svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+            <g>
+              <path d='M85.54524,258.42514l2.40954,5.20044a2.60052,2.60052,0,0,1,0,2.18665l-2.40954,5.20044a2.6037,2.6037,0,0,0,3.52865,3.42108l14.77752-7.38237a2.60678,2.60678,0,0,0,0-4.66495l-14.77752-7.38237A2.6037,2.6037,0,0,0,85.54524,258.42514Z' transform='translate(-83.29421 -252.71891)'></path>
+            </g>
+          </svg></button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="credit">
+      <p>&copy; 2024 Nexos AI. All rights reserved.</p>
+    </div>
+    <div class="back-to-top" id="backToTopBtn">
+      <a href="#top"><svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+          <g transform='translate(12.000000, 12.000000) rotate(-180.000000) translate(-12.000000, -12.000000) translate(5.500000, 4.000000)'>
+            <line x1='6.7743' y1='15.7501' x2='6.7743' y2='0.7501'></line>
+            <path d='M12.7988,9.6998 C12.7988,9.6998 9.5378,15.7498 6.7758,15.7498 C4.0118,15.7498 0.7498,9.6998 0.7498,9.6998'></path>
+          </g>
+        </svg></a>
+    </div>
+
+  </footer>
+
+
+  <script type="importmap">
+    {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+      </script>
+  <script type="module">
+    import { GoogleGenerativeAI } from "@google/generative-ai";
+
+    // Define constants
+    const API_KEY = 'AIzaSyBqfxSfrBIgcYSQo6DN3xdc8Wel8HtIpHQ'; // Replace with your Gemini API key
+
+    // Initialize Gemini AI
+
+    const genAI = new GoogleGenerativeAI(API_KEY);
+    const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+    const chat = model.startChat({
+      generationConfig: {
+        maxOutputTokens: 2024,
+      },
+    });
+
+    // Define variables for DOM elements
+    const userInput = document.getElementById('user-input');
+    const sendButton = document.getElementById('send-button');
+    const clearButton = document.getElementById('clear-button');
+    const chatMessages = document.getElementById('chat-messages');
+
+    // Define function to save messages to local storage
+    function saveMessages(messages) {
+      try {
+        localStorage.setItem('chatMessages', JSON.stringify(messages));
+      } catch (error) {
+        console.error('Error saving messages to local storage:', error);
+        // Handle the error gracefully, such as displaying a user-friendly error message
+        alert('An error occurred while saving messages. Please try again later.');
+      }
+    }
+
+    // Define function to load messages from local storage
+    function loadMessages() {
+      try {
+        const savedMessages = localStorage.getItem('chatMessages');
+        return savedMessages ? JSON.parse(savedMessages) : [];
+      } catch (error) {
+        console.error('Error loading messages from local storage:', error);
+        // Handle the error gracefully, such as returning an empty array
+        return [];
+      }
+    }
+
+    // Load saved messages when the page is loaded
+    let messages = loadMessages();
+    displayMessages(); // Add this line to display the loaded messages
+
+    // Function to display messages
+   async function displayMessages() {
+      chatMessages.innerHTML = `<div class="layer-01">
+      <div class="card">
+      <h2>Welcome to Nexos AI</h2>
+      <p>Revolutionizing the way you interact with artificial intelligence.</p>
+     </div> `;
+      messages.forEach(message => {
+        const messageDiv = document.createElement('div');
+        const htmloutput = marked.parse(message.text);
+        messageDiv.classList.add('message');
+        messageDiv.classList.add(message.role);
+        messageDiv.innerHTML = `
+        <div class="layer-02">
+        <div class="flex"><img class="logo" src="./assets/img/logo.png" alt="logo"/>
+        <h4>${message.role}</h4></div>
+        <div class="content">${htmloutput}</div></div>
+        `;
+        chatMessages.appendChild(messageDiv);
+      });
+    }
+
+    // Event listener for sending a message
+    sendButton.addEventListener('click', async () => {
+      const msg = userInput.value.trim();
+      if (msg !== '') {
+        // Send user input and context to the chatbot
+        try {
+          messages.push({ role: 'User', text: msg });
+          displayMessages();
+          
+          const result = await chat.sendMessage(msg);
+          const response = await result.response;
+          const markdownText = response.text();
+          messages.push({ role: 'NexosAi', text: markdownText });
+          displayMessages();
+          saveMessages(messages); // Save messages after each successful interaction
+        } catch (error) {
+          console.error('Error sending message:', error);
+          alert('An error occurred while sending your message. Please try again later.');
+          // Provide fallback response
+          const fallbackResponse = "I'm sorry, I couldn't understand that. Can you please provide more information?";
+
+          // Display fallback response
+          messages.push({ role: 'User', text: msg });
+          messages.push({ role: 'NexosAi', text: fallbackResponse });
+          displayMessages();
+          saveMessages(messages);
+        }
+        userInput.value = ''; // Clear input field after sending message
+      }
+    });;
+
+
+    // Event listener for clearing the chat history
+    clearButton.addEventListener('click', () => {
+      // Clear the chat messages from the interface
+      chatMessages.innerHTML = '';
+      // Clear the chat messages from local storage
+      localStorage.removeItem('chatMessages');
+      // Optionally, notify the user that the chat history has been cleared
+      alert('Chat history cleared successfully.');
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="./scripts/main.js"></script>
+</body>
+
+</html>
