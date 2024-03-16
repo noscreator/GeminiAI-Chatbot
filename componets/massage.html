@@ -1,0 +1,137 @@
+<div id="chat-messages"
+    class="flex-1 overflow-y-auto bg-slate-300 text-sm leading-6 text-slate-900 shadow-md dark:bg-slate-800 dark:text-slate-300 sm:text-base sm:leading-7">
+    
+</div>
+
+<div class="flex flex-row px-4 py-8 sm:px-6">
+    <img class="mr-2 flex h-8 w-8 rounded-full sm:mr-4" src="https://dummyimage.com/256x256/363536/ffffff&text=U" />
+
+    <div class="flex max-w-3xl items-center">
+        <p>Explain quantum computing in simple terms</p>
+    </div>
+</div>
+<style>
+    /* Base Styles */
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+    }
+
+    .container {
+        flex: 1;
+        overflow-y: auto;
+        background-color: #cbd5e0;
+        /* bg-slate-300 */
+        font-size: 0.875rem;
+        /* text-sm */
+        line-height: 1.6;
+        /* leading-6 */
+        color: #1a202c;
+        /* text-slate-900 */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        /* shadow-md */
+    }
+
+    .container.dark {
+        background-color: #1a202c;
+        /* dark:bg-slate-800 */
+        color: #cbd5e0;
+        /* dark:text-slate-300 */
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .items-center {
+        align-items: center;
+    }
+
+    .items-start {
+        align-items: flex-start;
+    }
+
+    .flex-row {
+        flex-direction: row;
+    }
+
+    .flex-col {
+        flex-direction: column;
+    }
+
+    .flex-1 {
+        flex: 1;
+    }
+
+    .justify-between {
+        justify-content: space-between;
+    }
+
+    .shadow-md {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    .py-8 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .py-4 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    /* Specific Element Styles */
+    img {
+        margin-right: 0.5rem;
+        /* mr-2 */
+        flex-shrink: 0;
+        height: 2rem;
+        /* h-8 */
+        width: 2rem;
+        /* w-8 */
+        border-radius: 9999px;
+        /* rounded-full */
+    }
+
+    button {
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        color: #3b82f6;
+        /* hover:text-blue-600 */
+    }
+
+    /* Responsive Styles */
+    @media screen and (min-width: 640px) {
+        .text-sm {
+            font-size: 1rem;
+            /* sm:text-base */
+        }
+
+        .leading-6 {
+            line-height: 1.6;
+            /* sm:leading-7 */
+        }
+
+        .px-6 {
+            padding-left: 1.5rem;
+            /* sm:px-6 */
+            padding-right: 1.5rem;
+            /* sm:px-6 */
+        }
+
+        .sm\:mr-4 {
+            margin-right: 1rem;
+            /* sm:mr-4 */
+        }
+    }
+</style>

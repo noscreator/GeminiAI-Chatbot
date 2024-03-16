@@ -38,14 +38,32 @@
     <div id="chat-container">
       <div id="chat-messages">
       </div>
-      <div id="chat-input">
-        <input type="text" id="user-input" placeholder="Type your message...">
-        <button id="send-button"><svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
-            <g>
-              <path d='M85.54524,258.42514l2.40954,5.20044a2.60052,2.60052,0,0,1,0,2.18665l-2.40954,5.20044a2.6037,2.6037,0,0,0,3.52865,3.42108l14.77752-7.38237a2.60678,2.60678,0,0,0,0-4.66495l-14.77752-7.38237A2.6037,2.6037,0,0,0,85.54524,258.42514Z' transform='translate(-83.29421 -252.71891)'></path>
-            </g>
-          </svg></button>
-      </div>
+      <form id="chat-input">
+        <label for="prompt">Enter your prompt</label>
+        <div>
+            <button type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 5l0 14"></path>
+                    <path d="M5 12l14 0"></path>
+                </svg>
+                <span>Attach file</span>
+            </button>
+        </div>
+        <textarea id="user-input" id="prompt" rows="1" placeholder="Enter your prompt"></textarea>
+        <div>
+            <button id="send-button" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M10 14l11 -11"></path>
+                    <path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5"></path>
+                </svg>
+                <span>Send message</span>
+            </button>
+        </div>
+    </form>
     </div>
   </main>
 
