@@ -122,12 +122,22 @@ svg {
   padding: 0;
 }
 
-.fe2a9c{
+.message{
   display: flex;
   padding: 2rem 1rem;
   flex-direction: row;
   align-items: center;
 }
+
+.message.User{
+  background-color: #a5f3fc;
+}
+
+.message.NexosAi{
+  background: #fff;
+}
+
+.fe2a9c
 
 form {
   display: flex;
@@ -180,7 +190,7 @@ textarea:focus {
 #chat-messages {
   flex: 1;
   overflow-y: auto;
-  background-color: #cbd5e1;
+  background-color: #f5f5f5;
   font-size: 0.875rem;
   line-height: 1.6;
   color: #1a202c;
