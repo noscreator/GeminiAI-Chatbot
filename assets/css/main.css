@@ -1,7 +1,6 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-
   background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
   margin: 0;
   padding: 0;
@@ -21,34 +20,33 @@ header {
   display: flex;
   justify-content: space-between;
   background-color: #fff;
-  border-bottom: 0.075rem solid #DCDCDC;
+  border-bottom: 0.075rem solid #404040;
   color: #000;
   padding: 1rem 0.75rem;
   text-align: center;
   background-image: linear-gradient(5deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
-header h2 {
-  margin: 0;
-}
-
-#chat-container {
-  display: flex;
-  height: 97vh;
-  width: 100%;
-  flex-direction: column;
-}
-
-.logo {
+header .logo {
   border-radius: .25rem;
   width: 2.5rem;
   height: 2.5rem;
 }
 
-.flex {
+header h2 {
+  margin: 0;
+}
+
+main{
   display: flex;
-  gap: 0.5rem;
-  align-items: center;
+  justify-content: center;
+}
+
+#chat-container {
+  display: flex;
+  height: 97vh;
+  width: 80%;
+  flex-direction: column;
 }
 
 svg {
@@ -76,7 +74,6 @@ svg {
   margin: 0;
   padding: 0;
 }
-
 
 /* Responsive styles */
 @media (max-width: 600px) {
@@ -168,9 +165,9 @@ form {
   display: flex;
   width: 100%;
   align-items: center;
-  border-top: 1px solid #cbd5e1;
-  border-radius: 0.375rem;
-  background-color: #cbd5e0;
+  border-top: 1px solid #404040;
+  border-radius: 0.375rem 0.375rem 0 0;
+  background-color: #fafafa;
   padding: 0.5rem;
 }
 
@@ -189,7 +186,7 @@ textarea {
   min-height: 2.5rem;
   width: 100%;
   border-radius: 0.375rem;
-  border: 1px solid #a0aec0;
+  border: 1px solid #404040;
   background-color: #cbd5e0;
   padding: 0.5rem;
   font-size: 1rem;
