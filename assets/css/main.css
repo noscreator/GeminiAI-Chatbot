@@ -69,15 +69,6 @@ svg {
   padding: 0.1rem;
 }
 
-.message {
-  border-radius: 0.25rem;
-  margin: 0.75rem 0;
-  padding: 0.05rem;
-  background-image: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
-  background-blend-mode: normal, lighten, soft-light;
-  clip-path: polygon(16px 0%, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0% 16px);
-}
-
 .content {
   font-family: 'Lato', sans-serif;
   margin: 0;
@@ -92,8 +83,6 @@ svg {
     /* Adjust width for smaller screens */
   }
 }
-
-
 
 .menu-btn {
   background: none;
@@ -153,7 +142,6 @@ svg {
   }
 }
 
-
 .back-to-top {
   position: fixed;
   bottom: 6rem;
@@ -173,8 +161,6 @@ svg {
 .back-to-top a:hover {
   background-color: #555;
 }
-
-
 
 form {
   display: flex;
@@ -314,15 +300,6 @@ img {
 
 /* Responsive Styles */
 @media screen and (min-width: 640px) {
-  .text-sm {
-    font-size: 1rem;
-    /* sm:text-base */
-  }
-
-  .leading-6 {
-    line-height: 1.6;
-    /* sm:leading-7 */
-  }
 
   .px-6 {
     padding-left: 1.5rem;
