@@ -19,7 +19,7 @@ h6 {
 header {
   display: flex;
   justify-content: space-between;
-  background-color: #fff;
+  background-color: #fafafa;
   border-bottom: 0.075rem solid #a3a3a3;
   color: #000;
   padding: 1rem 0.75rem;
@@ -48,33 +48,6 @@ header h2 {
 
 .menu-btn:hover {
   transform: rotate(90deg);
-}
-
-.popup-menu {
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  padding: 10px;
-  display: none;
-}
-
-.popup-menu ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.popup-menu li {
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.popup-menu li:hover {
-  background-color: #f0f0f0;
 }
 
 /* Animation to show popup menu */
@@ -148,11 +121,14 @@ img {
 
 .fe2a9c{
   display: flex;
-  flex-direction: column;
+  gap: 0.25rem;
+  align-items: center;
 }
 
 form {
   display: flex;
+  position: fixed;
+  bottom: 0;
   width: 100%;
   align-items: center;
   border: 1px solid #a3a3a3;
@@ -222,8 +198,8 @@ textarea:focus {
 
 .back-to-top a {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: #333;
+  padding: 1rem;
+  background-color: #d4d4d4;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
@@ -233,6 +209,9 @@ textarea:focus {
   background-color: #555;
 }
 
+.flex{
+  display: flex;
+}
 
 /* Responsive styles */
 @media (max-width: 600px) {
