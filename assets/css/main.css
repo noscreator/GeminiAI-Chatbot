@@ -37,13 +37,6 @@ header h2 {
   margin: 20px auto;
 }
 
-
-#chat-messages {
-  overflow-y: auto;
-  max-height: auto;
-  /* Limit height to allow scrolling on smaller screens */
-}
-
 .logo {
   border-radius: .25rem;
   width: 2.5rem;
@@ -281,9 +274,6 @@ textarea:focus {
   flex-direction: column;
 }
 
-.flex-1 {
-  flex: 1;
-}
 
 .justify-between {
   justify-content: space-between;
