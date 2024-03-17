@@ -60,6 +60,7 @@ header h2 {
 main{
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 #chat-container {
@@ -108,7 +109,6 @@ img {
   display: flex;
   padding: 2rem 1rem;
   flex-direction: column;
-  align-items: center;
 }
 
 .message.User{
@@ -150,7 +150,7 @@ button:hover {
   background-color: #2563eb;
 }
 
-textarea {
+input {
   display: flex;
   margin: 0 0.5rem;
   min-height: 2.5rem;
@@ -161,11 +161,11 @@ textarea {
   padding: 0.5rem;
   font-size: 1rem;
   color: #4a5568;
-  placeholder: #a0aec0;
+  placeholder: #707070;
   outline: none;
 }
 
-textarea:focus {
+input:focus {
   border-color: #2563eb;
   outline: 1px solid #2563eb;
 }

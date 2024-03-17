@@ -14,9 +14,3 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-
-
-function toggleMenu() {
-  var menu = document.getElementById('popupMenu');
-  menu.classList.toggle('show');
-}

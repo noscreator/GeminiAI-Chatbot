@@ -19,7 +19,7 @@
     <div class="flex"><img class="logo" src="./assets/img/nexosai.jpg" alt="Logo">
       <h2>Nexos Ai</h2>
     </div>
-    <button class="menu-btn" onclick="toggleMenu()"><svg class='line' xmlns='http://www.w3.org/2000/svg'
+    <button class="menu-btn" id="clear-button"><svg class='line' xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 24 24'>
         <g>
           <path
@@ -30,14 +30,6 @@
             transform='translate(-83.2856 -252.70127)'></path>
         </g>
       </svg></button>
-    <div class="popup-menu" id="popupMenu">
-      <ul>
-        <li>Home</li>
-        <li></li>
-        <li>Youtube</li>
-        <li id="clear-button">Clear All Chat</li>
-      </ul>
-    </div>
   </header>
 
   <!-- Sidebar 
@@ -156,7 +148,7 @@
             </svg>
           </button>
         </div>
-        <textarea id="user-input" rows="1" placeholder="Enter your prompt"></textarea>
+        <input id="user-input" placeholder="Enter your prompt" />
         <div>
           <button id="send-button" type="submit">
             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" stroke-width="2"
