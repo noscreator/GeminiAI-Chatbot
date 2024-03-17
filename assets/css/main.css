@@ -141,17 +141,8 @@ input {
 }
 
 input:focus {
-  border-color: #2563eb;
-  outline: 1px solid #2563eb;
-}
-
-#submit-button {
-  padding: 0.5rem;
-  transition: color 0.2s;
-}
-
-#submit-button:hover {
-  color: #2563eb;
+  border-color: #ec4899;
+  outline: 1px solid #ec4899;
 }
 
 #chat-messages {
