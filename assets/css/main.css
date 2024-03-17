@@ -18,7 +18,7 @@ h6 {
 
 header {
   display: flex;
-  position: sticky;
+  position: static;
   justify-content: space-between;
   background-color: #fafafa;
   border-bottom: 0.075rem solid #a3a3a3;
@@ -124,8 +124,8 @@ button {
 }
 
 button:hover {
-  color: #2563eb;
-  background-color: #2563eb;
+  color: #ec4899;
+  background-color: #ec4899;
 }
 
 input {

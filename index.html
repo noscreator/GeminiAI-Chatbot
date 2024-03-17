@@ -239,7 +239,7 @@
       <div class="card">
       <h2>Welcome to Nexos AI</h2>
       <p>Revolutionizing the way you interact with artificial intelligence.</p>
-     </div> `;
+     </div></div> `;
       messages.forEach(message => {
         const messageDiv = document.createElement('div');
         const htmloutput = marked.parse(message.text);
@@ -249,8 +249,8 @@
         <div class="fe2a9c">
     <img src="./assets/img/logo.png" />
     <h4>${message.role}</h4></div>
-    <div class="f8d82u">
-        <p class="content">${htmloutput}</p>
+    <div class="content">
+      ${htmloutput}
     </div>
         `;
         chatMessages.appendChild(messageDiv);
