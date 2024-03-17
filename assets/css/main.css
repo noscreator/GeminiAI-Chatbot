@@ -1,7 +1,6 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
   margin: 0;
   padding: 0;
 }
@@ -13,7 +12,8 @@ h4,
 h5,
 h6 {
   font-family: 'Source Sans Pro', sans-serif;
-  /* Additional heading styles */
+  font-weight: 700;
+  margin: 0;
 }
 
 header {
@@ -22,9 +22,7 @@ header {
   background-color: #fafafa;
   border-bottom: 0.075rem solid #a3a3a3;
   color: #000;
-  padding: 1rem 0.75rem;
-  text-align: center;
-  background-image: linear-gradient(5deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 0.75rem 0.5rem;
 }
 
 header .logo {
@@ -33,40 +31,12 @@ header .logo {
   height: 2.5rem;
 }
 
-header h2 {
-  margin: 0;
-}
-
-.menu-btn {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 20px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.menu-btn:hover {
-  transform: rotate(90deg);
-}
-
-/* Animation to show popup menu */
-.show {
-  display: block;
-  animation: slideIn 0.3s ease forwards;
-}
-
-
-main{
+main {
   margin: 0 auto;
   padding: 1rem;
-}
-
-#chat-container {
+  background-color: #f5f5f5;
   display: flex;
-  height: 97vh;
-  width: 80%;
-  flex-direction: column;
+  justify-content: center;
 }
 
 svg {
@@ -75,6 +45,21 @@ svg {
   stroke-width: 1;
   fill: none;
   stroke: #000000
+}
+
+img {
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 9999px;
+}
+
+#chat-container {
+  display: flex;
+  height: 97vh;
+  width: 80%;
+  flex-direction: column;
 }
 
 .card {
@@ -95,30 +80,21 @@ svg {
   padding: 0;
 }
 
-/* Specific Element Styles */
-img {
-  margin-right: 0.5rem;
-  flex-shrink: 0;
-  height: 2rem;
-  width: 2rem;
-  border-radius: 9999px;
-}
-
-.message{
+.message {
   display: flex;
   padding: 2rem 1rem;
   flex-direction: column;
 }
 
-.message.User{
+.message.User {
   background-color: #fce7f3;
 }
 
-.message.NexosAi{
+.message.NexosAi {
   background: #fff;
 }
 
-.fe2a9c{
+.fe2a9c {
   display: flex;
   gap: 0.25rem;
   align-items: center;
@@ -132,7 +108,7 @@ form {
   right: 0;
   width: 100%;
   align-items: center;
-  border-top: 1px solid #a3a3a3;
+  border-top: 0.075rem solid #a3a3a3;
   background-color: #fafafa;
   padding: 0.5rem;
 }
@@ -157,11 +133,11 @@ input {
   width: 100%;
   border-radius: 0.375rem;
   border: 1px solid #a3a3a3;
-  background-color: #cbd5e0;
+  background-color: #fafafa;
   padding: 0.5rem;
   font-size: 1rem;
-  color: #4a5568;
-  placeholder: #707070;
+  color: #171717;
+  placeholder: #0a0a0a;
   outline: none;
 }
 
@@ -209,7 +185,7 @@ input:focus {
   background-color: #555;
 }
 
-.flex{
+.flex {
   display: flex;
 }
 
@@ -227,7 +203,7 @@ input:focus {
     /* sm:px-6 */
   }
 
-  mr-4 {
+  .mr-4 {
     margin-right: 1rem;
     /* sm:mr-4 */
   }
@@ -245,4 +221,3 @@ input:focus {
     transform: translateY(0);
   }
 }
-
