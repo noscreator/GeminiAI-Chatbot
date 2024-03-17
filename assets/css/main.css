@@ -18,6 +18,7 @@ h6 {
 
 header {
   display: flex;
+  position: sticky;
   justify-content: space-between;
   background-color: #fafafa;
   border-bottom: 0.075rem solid #a3a3a3;
@@ -57,7 +58,7 @@ img {
 
 #chat-container {
   display: flex;
-  height: 97vh;
+  height: 80vh;
   width: 80%;
   flex-direction: column;
 }
@@ -129,7 +130,7 @@ button:hover {
 input {
   display: flex;
   margin: 0 0.5rem;
-  min-height: 2.5rem;
+  min-height: 2rem;
   width: 100%;
   border-radius: 0.375rem;
   border: 1px solid #a3a3a3;
