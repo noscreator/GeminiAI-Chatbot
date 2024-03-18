@@ -1,16 +1,15 @@
-![GitHub Pages](https://img.shields.io/github/deployments/noscreator/featurastic-login-page/github-pages.svg?style=flat-square&color=cyan)
-![GitHub Latest Release](https://img.shields.io/github/v/release/noscreator/featurastic-login-page.svg?style=flat-square&color=cyan)
-![GitHub License](https://img.shields.io/github/license/noscreator/featurastic-login-page.svg?style=flat-square&color=cyan)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/noscreator/featurastic-login-page.svg?style=flat-square&color=cyan)
+![GitHub Pages](https://img.shields.io/github/deployments/noscreator/GeminiAI-Chatbot/github-pages.svg?style=flat-square&color=cyan)
+![GitHub Latest Release](https://img.shields.io/github/v/release/noscreator/GeminiAI-Chatbot.svg?style=flat-square&color=cyan)
+![GitHub License](https://img.shields.io/github/license/noscreator/GeminiAI-Chatbot.svg?style=flat-square&color=cyan)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/noscreator/GeminiAI-Chatbot.svg?style=flat-square&color=cyan)
 
 ---
 
-### Nexos AI Web Chatbot
+### GeminiAI Chatbot Starter
 
-[![Blue Futuristic Technology Presentation_20240310_103546_0000](https://github.com/noscreator/featurastic-login-page/assets/152608930/4543551e-137d-4090-ab4a-51e8f7801237)
-](https://youtu.be/rMnDe0iEGRs?si=8w729cX0Lj9Ln0If)
+-- img --
 
-Welcome to Nexos AI Web Chatbot! This project demonstrates how to create a simple chatbot interface using Gemini AI, a powerful API for building AI-powered chatbots.
+Welcome to Gemini AI Chatbot! This project demonstrates how to create a simple chatbot interface using Gemini AI, a powerful API for building AI-powered chatbots.
 
 ---
 
@@ -24,8 +23,8 @@ Welcome to Nexos AI Web Chatbot! This project demonstrates how to create a simpl
 
 ### Links
 
-[![Web Demo](https://img.shields.io/badge/Web-Demo-blue?style=for-the-badge&logo=google-chrome)](https://noscreator.github.io/featurastic-login-page)
-[![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-green?style=for-the-badge&logo=github)](https://github.com/noscreator/featurastic-login-page)
+[![Web Demo](https://img.shields.io/badge/Web-Demo-blue?style=for-the-badge&logo=google-chrome)](https://noscreator.github.io/GeminiAI-Chatbot)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-green?style=for-the-badge&logo=github)](https://github.com/noscreator/GeminiAI-Chatbot)
 [![YouTube Video](https://img.shields.io/badge/YouTube-Video-red?style=for-the-badge&logo=youtube)](https://youtu.be/rMnDe0iEGRs?si=B2viVesOhHYusbBG)
 
 ---

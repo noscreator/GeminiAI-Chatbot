@@ -4,7 +4,7 @@ import { loadMessages } from "./app.js";
 import { saveMessages } from "./app.js";
 
 // Define constants
-const API_KEY = 'AIzaSyBqfxSfrBIgcYSQo6DN3xdc8Wel8HtIpHQ'; // Replace with your Gemini API key
+const API_KEY = 'YOUR_API_KEY'; // Replace with your Gemini API key
 
 // Initialize Gemini AI
 const genAI = new GoogleGenerativeAI(API_KEY);
@@ -28,8 +28,8 @@ displayMessages(); // Add this line to display the loaded messages
 async function displayMessages() {
   chatMessages.innerHTML = `<div class="layer-01">
           <div class="card">
-          <h2>Welcome to Nexos AI</h2>
-          <p>Revolutionizing the way you interact with artificial intelligence.</p>
+          <h2>Welcome to GeminiAI Chatbot Starter</h2>
+          <p>GeminiAI Chatbot Starter is an efficient template for developing chatbots using GeminiAI API.</p>
          </div></div>`;
   messages.forEach(message => {
     const messageDiv = document.createElement('div');
