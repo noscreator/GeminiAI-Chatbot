@@ -103,6 +103,7 @@ img {
 
 .chat-input {
   display: flex;
+  flex-direction: column;
   position: fixed;
   bottom: 0;
   left: 0;
