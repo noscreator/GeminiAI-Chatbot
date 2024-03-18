@@ -272,19 +272,21 @@
           const response = await result.response;
           const markdownText = response.text();
           messages.push({ role: 'User', text: msg });
+          displayMessages();
           messages.push({ role: 'NexosAi', text: markdownText });
           displayMessages();
+          saveMessages(messages);
         } catch (error) {
+          console.error('Error sending message:', error);
           // Provide fallback response
           const fallbackResponse = 'Sorry, an error occurred while processing your request. Please try again later.';
           // Display fallback response
           messages.push({ role: 'User', text: msg });
           messages.push({ role: 'NexosAi', text: fallbackResponse });
           displayMessages();
-          console.error('Error sending message:', error);
+          saveMessages(messages);
         }
         userInput.value = ''; // Clear input field after sending message
-        saveMessages(messages); // Save messages after each successful interaction
       }
     }); // Add this line to close the event listener
   </script>
