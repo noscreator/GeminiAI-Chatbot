@@ -136,7 +136,7 @@
       <div id="chat-messages">
         <!-- chat massages here-->
       </div>
-      <div id="chat-input">
+      <div class="chat-input">
         <div>
           <button type="button">
             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24">
@@ -283,14 +283,15 @@
       }
     }); // Add this line to close the event listener
 
+
+
+
     // Event listener for clearing the chat history
     clearButton.addEventListener('click', () => {
       chatMessages.innerHTML = '';
       localStorage.removeItem('chatMessages');
       alert('Chat history cleared successfully.');
     });
-
-    
   </script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="./scripts/main.js"></script>
