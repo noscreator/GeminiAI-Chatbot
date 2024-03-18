@@ -2,7 +2,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { loadMessages } from "./app.js";
 import { saveMessages } from "./app.js";
-import marked from "marked";
 
 // Define the function to initialize the Gemini AI model
 
