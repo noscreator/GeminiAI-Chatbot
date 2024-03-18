@@ -179,13 +179,14 @@
 
   <script type="importmap">
     {
-      "imports": {
-        "@google/generative-ai": "https://esm.run/@google/generative-ai"
-      }
-    }
-  </script>
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+      </script>
   <script type="module">
     import { GoogleGenerativeAI } from "@google/generative-ai";
+
 
     // Define constants
     const API_KEY = 'AIzaSyBqfxSfrBIgcYSQo6DN3xdc8Wel8HtIpHQ'; // Replace with your Gemini API key
@@ -268,11 +269,11 @@
       const msg = userInput.value.trim();
       if (msg !== '') {
         try {
+          messages.push({ role: 'User', text: msg });
+          displayMessages();
           const result = await chat.sendMessage(msg);
           const response = await result.response;
           const markdownText = response.text();
-          messages.push({ role: 'User', text: msg });
-          displayMessages();
           messages.push({ role: 'NexosAi', text: markdownText });
           displayMessages();
           saveMessages(messages);
