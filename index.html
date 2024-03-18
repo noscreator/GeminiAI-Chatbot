@@ -263,26 +263,10 @@
       });
     } // Add this line to close the function definition
 
-    // Function to show loader while sending message
-    function showLoader() {
-      const loader = document.createElement('div');
-      loader.classList.add('loader');
-      chatMessages.appendChild(loader);
-    }
-
-    // Function to hide loader after message is sent
-    function hideLoader() {
-      const loader = document.querySelector('.loader');
-      if (loader) {
-        loader.remove();
-      }
-    }
-
     // Event listener for sending a message
     sendButton.addEventListener('click', async () => {
       const msg = userInput.value.trim();
       if (msg !== '') {
-        showLoader(); // Show loader while sending message
         messages.push({ role: 'User', text: msg });
         displayMessages();
         try {
@@ -300,7 +284,6 @@
           console.error('Error sending message:', error);
         }
         userInput.value = ''; // Clear input field after sending message
-        hideLoader(); // Hide loader after message is sent
         saveMessages(messages); // Save messages after each successful interaction
       }
     }); // Add this line to close the event listener
