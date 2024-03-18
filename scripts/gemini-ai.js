@@ -1,7 +1,7 @@
 // Import any required modules or libraries here
-import { @google/generative-ai } from "https://esm.run/@google/generative-ai";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { loadMessages } from "./scripts/app.js";
+
 
 // Define constants
 const API_KEY = 'AIzaSyBqfxSfrBIgcYSQo6DN3xdc8Wel8HtIpHQ'; // Replace with your Gemini API key
