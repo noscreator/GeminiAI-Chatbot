@@ -14,3 +14,10 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+// Event listener for clearing the chat history
+clearButton.addEventListener('click', () => {
+  chatMessages.innerHTML = '';
+  localStorage.removeItem('chatMessages');
+  alert('Chat history cleared successfully.');
+});

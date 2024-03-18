@@ -75,10 +75,3 @@ sendButton.addEventListener('click', async () => {
     userInput.value = ''; // 
   }
 }); // Add this line to close the event listener
-
-// Event listener for clearing the chat history
-clearButton.addEventListener('click', () => {
-  chatMessages.innerHTML = '';
-  localStorage.removeItem('chatMessages');
-  alert('Chat history cleared successfully.');
-});
