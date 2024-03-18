@@ -276,7 +276,6 @@
       chatMessages.appendChild(messageDiv);
     }
 
-
     // Function to hide loader after message is sent
     function hideLoader() {
       const loader = document.querySelector('.loader');
@@ -290,6 +289,7 @@
       const msg = userInput.value.trim();
       if (msg !== '') {
         showLoader(); // Show loader while sending message
+        userInput.value = ''; // Clear input field after sending message
         // Send user input and context to the chatbot
         try {
           const result = await chat.sendMessage(msg);
@@ -301,11 +301,8 @@
           displayMessages();
           saveMessages(messages); // Save messages after each successful interaction
         } catch (error) {
-          console.error('Error sending message:', error);
-          alert('An error occurred while sending your message. Please try again later.');
           // Provide fallback response
           const fallbackResponse = 'Sorry, an error occurred while processing your request. Please try again later.';
-
           // Display fallback response
           messages.push({ role: 'User', text: msg });
           messages.push({ role: 'NexosAi', text: fallbackResponse });
@@ -314,15 +311,16 @@
         }
         hideLoader(); // Hide loader after message is sent
         scrollToBottom(); // Scroll to the bottom of the chat container
-        userInput.value = ''; // Clear input field after sending message
       }
     });
 
-    // Function to scroll to the bottom of the chat container
+    // Scroll to the bottom of the chat container when the page is loaded
+    window.onload = scrollToBottom;
+
+    // Function to scroll to the bottom of the chat container when a new message is added
     function scrollToBottom() {
       chatMessages.scrollTop = chatMessages.scrollHeight;
     }
-
   </script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="./scripts/main.js"></script>
