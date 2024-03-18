@@ -313,6 +313,15 @@
       // Optionally, notify the user that the chat history has been cleared
       alert('Chat history cleared successfully.');
     });
+
+    // Function to scroll to the bottom of the chat container
+    function scrollToBottom() {
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Scroll to the bottom of the chat container when the page is loaded
+    scrollToBottom();
+    
   </script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="./scripts/main.js"></script>

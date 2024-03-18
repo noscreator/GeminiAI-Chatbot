@@ -163,7 +163,7 @@ input:focus {
 
 .back-to-top a {
   display: inline-block;
-  padding: 0.5rem 0.25rem;
+  padding: 0.25rem 0.5rem;
   background-color: #fafafa;
   border: 0.075rem solid #a3a3a3;
   border-radius: 9999px;
