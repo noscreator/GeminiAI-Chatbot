@@ -191,7 +191,6 @@
     const API_KEY = 'AIzaSyBqfxSfrBIgcYSQo6DN3xdc8Wel8HtIpHQ'; // Replace with your Gemini API key
 
     // Initialize Gemini AI
-
     const genAI = new GoogleGenerativeAI(API_KEY);
     const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
     const chat = model.startChat({
@@ -239,20 +238,19 @@
           <div class="card">
           <h2>Welcome to Nexos AI</h2>
           <p>Revolutionizing the way you interact with artificial intelligence.</p>
-         </div></div> `;
+         </div></div>`;
       messages.forEach(message => {
         const messageDiv = document.createElement('div');
         const htmloutput = marked.parse(message.text);
         messageDiv.classList.add('message');
         messageDiv.classList.add(message.role);
-        messageDiv.innerHTML = `
-      <div class="fe2a9c">
-        <img src="./assets/img/logo.png" />
-        <h4>${message.role}</h4></div>
-      <div class="content">
-        ${htmloutput}
-      </div>
-            `;
+        messageDiv.innerHTML = `<div class="fe2a9c">
+          <img src="./assets/img/logo.png" />
+          <h4>${message.role}</h4>
+          </div>
+          <div class="content">
+            ${htmloutput}
+          </div>`;
         chatMessages.appendChild(messageDiv);
       });
     } // Add this line to close the function definition
@@ -262,11 +260,12 @@
       const msg = userInput.value.trim();
       if (msg !== '') {
         try {
+          messages.push({ role: 'User', text: msg });
+          displayMessages();
+
           const result = await chat.sendMessage(msg);
           const response = await result.response;
           const markdownText = response.text();
-          messages.push({ role: 'User', text: msg });
-          displayMessages();
           messages.push({ role: 'NexosAi', text: markdownText });
           displayMessages();
         } catch (error) {
