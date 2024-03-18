@@ -191,7 +191,6 @@
     const API_KEY = 'AIzaSyBqfxSfrBIgcYSQo6DN3xdc8Wel8HtIpHQ'; // Replace with your Gemini API key
 
     // Initialize Gemini AI
-
     const genAI = new GoogleGenerativeAI(API_KEY);
     const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
     const chat = model.startChat({
@@ -205,7 +204,6 @@
     const sendButton = document.getElementById('send-button');
     const clearButton = document.getElementById('clear-button');
     const chatMessages = document.getElementById('chat-messages');
-
 
     // Event listener for clearing the chat history
     clearButton.addEventListener('click', () => {
@@ -290,13 +288,14 @@
       if (msg !== '') {
         showLoader(); // Show loader while sending message
         userInput.value = ''; // Clear input field after sending message
+        messages.push({ role: 'User', text: msg });
+        displayMessages();
+        saveMessages(messages); // Save messages after each successful interaction
         // Send user input and context to the chatbot
         try {
           const result = await chat.sendMessage(msg);
           const response = await result.response;
           const markdownText = response.text();
-          messages.push({ role: 'User', text: msg });
-          displayMessages();
           messages.push({ role: 'NexosAi', text: markdownText });
           displayMessages();
           saveMessages(messages); // Save messages after each successful interaction
@@ -304,13 +303,13 @@
           // Provide fallback response
           const fallbackResponse = 'Sorry, an error occurred while processing your request. Please try again later.';
           // Display fallback response
-          messages.push({ role: 'User', text: msg });
           messages.push({ role: 'NexosAi', text: fallbackResponse });
           displayMessages();
           saveMessages(messages);
+        } finally {
+          hideLoader(); // Hide loader after message is sent
+          scrollToBottom(); // Scroll to the bottom of the chat container
         }
-        hideLoader(); // Hide loader after message is sent
-        scrollToBottom(); // Scroll to the bottom of the chat container
       }
     });
 
