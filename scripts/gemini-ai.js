@@ -18,7 +18,6 @@ const chat = model.startChat({
 // Define variables for DOM elements
 const userInput = document.getElementById('user-input');
 const sendButton = document.getElementById('send-button');
-const clearButton = document.getElementById('clear-button');
 const chatMessages = document.getElementById('chat-messages');
 
 // Load saved messages when the page is loaded

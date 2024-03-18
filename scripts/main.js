@@ -1,6 +1,7 @@
-window.onscroll = function () { scrollFunction() };
-
+const clearButton = document.getElementById('clear-button');
 const chatMessages = document.getElementById('chat-messages');
+
+window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {

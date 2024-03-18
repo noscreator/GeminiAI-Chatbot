@@ -1,3 +1,5 @@
+const chatMessages = document.getElementById('chat-messages');
+
 // Define function to save messages to local storage
 function saveMessages(messages) {
   try {
