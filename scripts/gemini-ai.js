@@ -9,9 +9,6 @@ const importMap = {
 };
 
 
-// Define your Gemini AI API functions here
-
-
 // Define constants
 const API_KEY = 'AIzaSyBqfxSfrBIgcYSQo6DN3xdc8Wel8HtIpHQ'; // Replace with your Gemini API key
 
