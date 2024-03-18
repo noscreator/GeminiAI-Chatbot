@@ -285,8 +285,6 @@
       }
     }
 
-
-
     // Event listener for sending a message
     sendButton.addEventListener('click', async () => {
       const msg = userInput.value.trim();
@@ -306,7 +304,8 @@
           console.error('Error sending message:', error);
           alert('An error occurred while sending your message. Please try again later.');
           // Provide fallback response
-          const fallbackResponse = "I'm sorry, I couldn't understand that. Can you please provide more information?";
+          const fallbackResponse = 'Sorry, an error occurred while processing your request. Please try again later.';
+
           // Display fallback response
           messages.push({ role: 'User', text: msg });
           messages.push({ role: 'NexosAi', text: fallbackResponse });
@@ -314,6 +313,7 @@
           saveMessages(messages);
         }
         hideLoader(); // Hide loader after message is sent
+        scrollToBottom(); // Scroll to the bottom of the chat container
         userInput.value = ''; // Clear input field after sending message
       }
     });
@@ -324,7 +324,7 @@
     }
 
     // Scroll to the bottom of the chat container when the page is loaded
-    scrollToBottom();
+
   </script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="./scripts/main.js"></script>
