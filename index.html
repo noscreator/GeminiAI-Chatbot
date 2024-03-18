@@ -267,11 +267,7 @@
     function showLoader() {
       const loader = document.createElement('div');
       loader.classList.add('loader');
-      const messageDiv = document.createElement('div');
-      messageDiv.classList.add('message');
-      messageDiv.classList.add('NexosAi');
-      messageDiv.appendChild(loader);
-      chatMessages.appendChild(messageDiv);
+      chatMessages.appendChild(loader);
     }
 
     // Function to hide loader after message is sent
@@ -308,18 +304,9 @@
           saveMessages(messages);
         } finally {
           hideLoader(); // Hide loader after message is sent
-          scrollToBottom(); // Scroll to the bottom of the chat container
         }
       }
-    });
-
-    // Scroll to the bottom of the chat container when the page is loaded
-    window.onload = scrollToBottom;
-
-    // Function to scroll to the bottom of the chat container when a new message is added
-    function scrollToBottom() {
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
+    }); 
   </script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="./scripts/main.js"></script>
