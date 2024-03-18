@@ -179,19 +179,19 @@
 
   <script type="importmap">
     {
-          "imports": {
-            "@google/generative-ai": "https://esm.run/@google/generative-ai"
-          }
-        }
-      </script>
+      "imports": {
+        "@google/generative-ai": "https://esm.run/@google/generative-ai"
+      }
+    }
+  </script>
   <script type="module">
     import { GoogleGenerativeAI } from "@google/generative-ai";
-
 
     // Define constants
     const API_KEY = 'AIzaSyBqfxSfrBIgcYSQo6DN3xdc8Wel8HtIpHQ'; // Replace with your Gemini API key
 
     // Initialize Gemini AI
+
     const genAI = new GoogleGenerativeAI(API_KEY);
     const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
     const chat = model.startChat({
@@ -268,26 +268,32 @@
     sendButton.addEventListener('click', async () => {
       const msg = userInput.value.trim();
       if (msg !== '') {
+        showLoader(); // Show loader while sending message
+        // Send user input and context to the chatbot
         try {
-          messages.push({ role: 'User', text: msg });
-          displayMessages();
           const result = await chat.sendMessage(msg);
           const response = await result.response;
           const markdownText = response.text();
+          messages.push({ role: 'User', text: msg });
+          displayMessages();
           messages.push({ role: 'NexosAi', text: markdownText });
           displayMessages();
-          saveMessages(messages);
+          saveMessages(messages); // Save messages after each successful interaction
         } catch (error) {
           console.error('Error sending message:', error);
+          alert('An error occurred while sending your message. Please try again later.');
           // Provide fallback response
           const fallbackResponse = 'Sorry, an error occurred while processing your request. Please try again later.';
+
           // Display fallback response
           messages.push({ role: 'User', text: msg });
           messages.push({ role: 'NexosAi', text: fallbackResponse });
           displayMessages();
           saveMessages(messages);
         }
-        userInput.value = ''; // Clear input field after sending message
+        hideLoader(); // Hide loader after message is sent
+        scrollToBottom(); // Scroll to the bottom of the chat container
+        userInput.value = ''; // 
       }
     }); // Add this line to close the event listener
   </script>

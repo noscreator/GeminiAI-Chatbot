@@ -1,5 +1,3 @@
-
-
 window.onscroll = function () { scrollFunction() };
 
 const chatMessages = document.getElementById('chat-messages');
