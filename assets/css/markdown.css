@@ -78,14 +78,12 @@
 .content code {
   font-family: 'JetBrains Mono', monospace;
   font-size: 12px;
-  padding: 2px 4px;
-  border-radius: 4px;
-  background-color: #f5f5f5;
 }
 
 .content pre {
   font-family: 'JetBrains Mono', monospace;
   padding: 10px;
   border-radius: 4px;
+  background-color: #f5f5f5;
   overflow-x: auto;
 }
