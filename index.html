@@ -268,8 +268,6 @@
     sendButton.addEventListener('click', async () => {
       const msg = userInput.value.trim();
       if (msg !== '') {
-        showLoader(); // Show loader while sending message
-        // Send user input and context to the chatbot
         try {
           const result = await chat.sendMessage(msg);
           const response = await result.response;
@@ -284,15 +282,12 @@
           alert('An error occurred while sending your message. Please try again later.');
           // Provide fallback response
           const fallbackResponse = 'Sorry, an error occurred while processing your request. Please try again later.';
-
           // Display fallback response
           messages.push({ role: 'User', text: msg });
           messages.push({ role: 'NexosAi', text: fallbackResponse });
           displayMessages();
           saveMessages(messages);
         }
-        hideLoader(); // Hide loader after message is sent
-        scrollToBottom(); // Scroll to the bottom of the chat container
         userInput.value = ''; // 
       }
     }); // Add this line to close the event listener
