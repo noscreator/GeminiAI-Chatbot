@@ -165,7 +165,7 @@
       <p>&copy; 2024 Nexos AI. All rights reserved.</p>
     </div>
     <div class="back-to-top" id="backToTopBtn">
-      <a href="#top"><svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+      <a href="#top"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
           <g
             transform='translate(12.000000, 12.000000) rotate(-180.000000) translate(-12.000000, -12.000000) translate(5.500000, 4.000000)'>
             <line x1='6.7743' y1='15.7501' x2='6.7743' y2='0.7501'></line>
@@ -179,11 +179,11 @@
 
   <script type="importmap">
     {
-          "imports": {
-            "@google/generative-ai": "https://esm.run/@google/generative-ai"
-          }
-        }
-      </script>
+      "imports": {
+        "@google/generative-ai": "https://esm.run/@google/generative-ai"
+      }
+    }
+  </script>
   <script type="module">
     import { GoogleGenerativeAI } from "@google/generative-ai";
 
@@ -279,11 +279,11 @@
         showLoader(); // Show loader while sending message
         // Send user input and context to the chatbot
         try {
-          messages.push({ role: 'User', text: msg });
-          displayMessages();
           const result = await chat.sendMessage(msg);
           const response = await result.response;
           const markdownText = response.text();
+          messages.push({ role: 'User', text: msg });
+          displayMessages();
           messages.push({ role: 'NexosAi', text: markdownText });
           displayMessages();
           saveMessages(messages); // Save messages after each successful interaction
@@ -303,17 +303,6 @@
       }
     });
 
-
-    // Event listener for clearing the chat history
-    clearButton.addEventListener('click', () => {
-      // Clear the chat messages from the interface
-      chatMessages.innerHTML = '';
-      // Clear the chat messages from local storage
-      localStorage.removeItem('chatMessages');
-      // Optionally, notify the user that the chat history has been cleared
-      alert('Chat history cleared successfully.');
-    });
-
     // Function to scroll to the bottom of the chat container
     function scrollToBottom() {
       chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -321,7 +310,9 @@
 
     // Scroll to the bottom of the chat container when the page is loaded
     scrollToBottom();
-    
+
+
+
   </script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="./scripts/main.js"></script>
