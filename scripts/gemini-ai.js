@@ -4,7 +4,7 @@ import { loadMessages } from "./app.js";
 import { saveMessages } from "./app.js";
 
 // Define constants
-const API_KEY = 'YOUR_API_KEY'; // Replace with your Gemini API key
+const API_KEY = 'AIzaSyBqfxSfrBIgcYSQo6DN3xdc8Wel8HtIpHQ'; // Replace with your Gemini API key
 
 // Initialize Gemini AI
 const genAI = new GoogleGenerativeAI(API_KEY);
