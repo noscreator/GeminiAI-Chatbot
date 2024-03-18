@@ -283,7 +283,6 @@
       const msg = userInput.value.trim();
       if (msg !== '') {
         showLoader(); // Show loader while sending message
-        userInput.value = ''; // Clear input field after sending message
         messages.push({ role: 'User', text: msg });
         displayMessages();
         saveMessages(messages); // Save messages after each successful interaction
@@ -303,6 +302,7 @@
           displayMessages();
           saveMessages(messages);
         } finally {
+          userInput.value = ''; // Clear input field after sending message
           hideLoader(); // Hide loader after message is sent
         }
       }
