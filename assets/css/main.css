@@ -101,7 +101,7 @@ img {
   align-items: center;
 }
 
-form {
+#chat-input {
   display: flex;
   position: fixed;
   bottom: 0;
