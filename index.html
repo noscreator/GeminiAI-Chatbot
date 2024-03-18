@@ -186,7 +186,7 @@
   </script>
   <script type="module">
     import { GoogleGenerativeAI } from "@google/generative-ai";
-    import { loadmassage } from "./app.js";
+    import { loadmassage } from "./scripts/app.js";
 
     // Define constants
     const API_KEY = 'AIzaSyBqfxSfrBIgcYSQo6DN3xdc8Wel8HtIpHQ'; // Replace with your Gemini API key
@@ -205,8 +205,6 @@
     const sendButton = document.getElementById('send-button');
     const clearButton = document.getElementById('clear-button');
     const chatMessages = document.getElementById('chat-messages');
-
-
 
     // Load saved messages when the page is loaded
     let messages = loadMessages();
@@ -262,9 +260,6 @@
         userInput.value = ''; // 
       }
     }); // Add this line to close the event listener
-
-
-
 
     // Event listener for clearing the chat history
     clearButton.addEventListener('click', () => {
