@@ -3,8 +3,6 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { loadMessages } from "./app.js";
 import { saveMessages } from "./app.js";
 
-// Define the function to initialize the Gemini AI model
-
 // Define constants
 const API_KEY = 'AIzaSyBqfxSfrBIgcYSQo6DN3xdc8Wel8HtIpHQ'; // Replace with your Gemini API key
 
