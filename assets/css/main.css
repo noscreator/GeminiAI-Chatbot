@@ -162,7 +162,6 @@ input:focus {
 }
 
 .back-to-top a {
-  display: block;
   padding: 0.25rem 0.5rem;
   background-color: #fafafa;
   border: 0.075rem solid #a3a3a3;
@@ -213,6 +212,7 @@ input:focus {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
