@@ -285,25 +285,24 @@
         showLoader(); // Show loader while sending message
         messages.push({ role: 'User', text: msg });
         displayMessages();
-        saveMessages(messages); // Save messages after each successful interaction
-        // Send user input and context to the chatbot
         try {
           const result = await chat.sendMessage(msg);
           const response = await result.response;
           const markdownText = response.text();
           messages.push({ role: 'NexosAi', text: markdownText });
           displayMessages();
-          saveMessages(messages); // Save messages after each successful interaction
         } catch (error) {
           // Provide fallback response
           const fallbackResponse = 'Sorry, an error occurred while processing your request. Please try again later.';
           // Display fallback response
           messages.push({ role: 'NexosAi', text: fallbackResponse });
           displayMessages();
-          saveMessages(messages);
+          console.error('Error sending message:', error);
         }
         userInput.value = ''; // Clear input field after sending message
         hideLoader(); // Hide loader after message is sent
+        saveMessages(messages); // Save messages after each successful interaction
+
       }
     }); // Add this line to close the event listener
   </script>
