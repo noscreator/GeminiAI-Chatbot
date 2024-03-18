@@ -7,7 +7,7 @@
 
 ### GeminiAI Chatbot Starter
 
--- img --
+-- img
 
 Welcome to Gemini AI Chatbot! This project demonstrates how to create a simple chatbot interface using Gemini AI, a powerful API for building AI-powered chatbots.
 
