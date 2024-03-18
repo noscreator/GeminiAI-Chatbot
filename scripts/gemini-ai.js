@@ -71,7 +71,7 @@ sendButton.addEventListener('click', async () => {
       messages.push({ role: 'NexosAi', text: fallbackResponse });
       displayMessages();
     }
-    saveMessages(messages);
+    // saveMessages(messages);
     userInput.value = ''; // 
   }
 }); // Add this line to close the event listener
