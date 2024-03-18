@@ -267,18 +267,18 @@
     sendButton.addEventListener('click', async () => {
       const msg = userInput.value.trim();
       if (msg !== '') {
-        messages.push({ role: 'User', text: msg });
-        displayMessages();
         try {
           const result = await chat.sendMessage(msg);
           const response = await result.response;
           const markdownText = response.text();
+          messages.push({ role: 'User', text: msg });
           messages.push({ role: 'NexosAi', text: markdownText });
           displayMessages();
         } catch (error) {
           // Provide fallback response
           const fallbackResponse = 'Sorry, an error occurred while processing your request. Please try again later.';
           // Display fallback response
+          messages.push({ role: 'User', text: msg });
           messages.push({ role: 'NexosAi', text: fallbackResponse });
           displayMessages();
           console.error('Error sending message:', error);
