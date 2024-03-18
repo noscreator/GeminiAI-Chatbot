@@ -21,4 +21,4 @@ function loadMessages() {
   }
 }
 
-export { loadMessages, saveMessages };
+export { loadMessages };
