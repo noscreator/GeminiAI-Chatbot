@@ -57,8 +57,7 @@ img {
 
 #chat-container {
   display: flex;
-  height: auto;
-  width: auto;
+  margin: 0 auto;
   flex-direction: column;
 }
 
@@ -103,7 +102,6 @@ img {
 
 .chat-input {
   display: flex;
-  flex-direction: column;
   position: fixed;
   bottom: 0;
   left: 0;
