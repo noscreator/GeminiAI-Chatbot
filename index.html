@@ -269,8 +269,13 @@
     function showLoader() {
       const loader = document.createElement('div');
       loader.classList.add('loader');
-      chatMessages.appendChild(loader);
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('message');
+      messageDiv.classList.add('NexosAi');
+      messageDiv.appendChild(loader);
+      chatMessages.appendChild(messageDiv);
     }
+
 
     // Function to hide loader after message is sent
     function hideLoader() {
@@ -279,6 +284,8 @@
         loader.remove();
       }
     }
+
+
 
     // Event listener for sending a message
     sendButton.addEventListener('click', async () => {
