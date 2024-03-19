@@ -7,7 +7,7 @@
 
 ### GeminiAI Chatbot Starter
 
--- img
+![Blue Futuristic Technology Presentation_20240319_182256_0000](https://github.com/noscreator/GeminiAI-Chatbot/assets/152608930/21601a6c-e5e0-4318-91e6-8136188e1821)
 
 Welcome to Gemini AI Chatbot! This project demonstrates how to create a simple chatbot interface using Gemini AI, a powerful API for building AI-powered chatbots.
 
@@ -62,4 +62,4 @@ If you'd like to contribute to this project, please follow these ste
 
 ### License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apcha 2.0 Licence - see the [LICENSE](LICENSE) file for details.
