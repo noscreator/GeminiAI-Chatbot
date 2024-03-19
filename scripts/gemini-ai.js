@@ -1,1 +1,76 @@
-eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('d{n}e"@W/X-Y";d{o}e"./q.r";d{s}e"./q.r";0 t=\'Z\';0 u=10(t);0 v=11 n(u);0 f=v.12({f:\'13-14\'});0 g=f.15({16:{17:18,},});0 h=a.i(\'19-1a\');0 w=a.i(\'1b-1c\');0 j=a.i(\'g-2\');1d 2=o();6();x 1e 6(){j.y=`<1 b="1f-1g"><1 b="1h"><z>1i 1j k A B</z><p>k A B 1k C 1l 1m 1n 1o 1p 1q k 1r.</p></1></1>`;2.1s(3=>{0 7=a.1t(\'1\');0 D=1u.1v(3.4);7.E.F(\'3\');7.E.F(3.5);7.y=`<1 b="1w"><G 1x="./1y/G/1z.1A"/><H>${3.5}</H></1><1 b="1B">${D}</1>`;j.1C(7)})}w.1D(\'1E\',x()=>{0 8=h.I.1F();1G(8!==\'\'){l{2.c({5:\'J\',4:8});6();0 K=L g.1H(8);0 m=L K.m;0 M=m.4();2.c({5:\'N\',4:M});6()}1I(9){1J.9(\'1K O 3:\',9);1L(\'1M 9 P Q O R 3. S l T U.\');0 V=\'1N, C 9 P Q 1O R 1P. S l T U.\';2.c({5:\'J\',4:8});2.c({5:\'N\',4:V});6()}s(2);h.I=\'\'}});',62,114,'const|div|messages|message|text|role|displayMessages|messageDiv|msg|error|document|class|push|import|from|model|chat|userInput|getElementById|chatMessages|GeminiAI|try|response|GoogleGenerativeAI|loadMessages||app|js|saveMessages|ENY_API|API_KEY|genAI|sendButton|async|innerHTML|h2|Chatbot|Starter|an|htmloutput|classList|add|img|h4|value|User|result|await|markdownText|NexosAi|sending|occurred|while|your|Please|again|later|fallbackResponse|google|generative|ai|QUl6YVN5QnFmeFNmckJJZ2NZU1FvNkROM3hkYzhXZWw4SHRJcEhR|atob|new|getGenerativeModel|gemini|pro|startChat|generationConfig|maxOutputTokens|2048|user|input|send|button|let|function|layer|01|card|Welcome|to|is|efficient|template|for|developing|chatbots|using|API|forEach|createElement|marked|parse|fe2a9c|src|assets|logo|png|content|appendChild|addEventListener|click|trim|if|sendMessage|catch|console|Error|alert|An|Sorry|processing|request'.split('|'),0,{}))
+// Import any required modules or libraries here
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import { loadMessages } from "./app.js";
+import { saveMessages } from "./app.js";
+
+const ENY_API = 'QUl6YVN5QnFmeFNmckJJZ2NZU1FvNkROM3hkYzhXZWw4SHRJcEhR';
+const API_KEY = atob(ENY_API);
+
+// Initialize Gemini AI
+const genAI = new GoogleGenerativeAI(API_KEY);
+const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+const chat = model.startChat({
+  generationConfig: {
+    maxOutputTokens: 2048,
+  },
+});
+
+// Define variables for DOM elements
+const userInput = document.getElementById('user-input');
+const sendButton = document.getElementById('send-button');
+const chatMessages = document.getElementById('chat-messages');
+
+// Load saved messages when the page is loaded
+let messages = loadMessages();
+displayMessages(); // Add this line to display the loaded messages
+
+// Function to display messages
+async function displayMessages() {
+  chatMessages.innerHTML = `<div class="layer-01">
+          <div class="card">
+          <h2>Welcome to GeminiAI Chatbot Starter</h2>
+          <p>GeminiAI Chatbot Starter is an efficient template for developing chatbots using GeminiAI API.</p>
+         </div></div>`;
+  messages.forEach(message => {
+    const messageDiv = document.createElement('div');
+    const htmloutput = marked.parse(message.text);
+    messageDiv.classList.add('message');
+    messageDiv.classList.add(message.role);
+    messageDiv.innerHTML = `<div class="fe2a9c">
+          <img src="./assets/img/logo.png" />
+          <h4>${message.role}</h4>
+          </div>
+          <div class="content">
+            ${htmloutput}
+          </div>`;
+    chatMessages.appendChild(messageDiv);
+  });
+} // Add this line to close the function definition
+
+// Event listener for sending a message
+sendButton.addEventListener('click', async () => {
+  const msg = userInput.value.trim();
+  if (msg !== '') {
+    try {
+      messages.push({ role: 'User', text: msg });
+      displayMessages();
+
+      const result = await chat.sendMessage(msg);
+      const response = await result.response;
+      const markdownText = response.text();
+      messages.push({ role: 'NexosAi', text: markdownText });
+      displayMessages();
+    } catch (error) {
+      console.error('Error sending message:', error);
+      alert('An error occurred while sending your message. Please try again later.');
+      // Provide fallback response
+      const fallbackResponse = 'Sorry, an error occurred while processing your request. Please try again later.';
+      // Display fallback response
+      messages.push({ role: 'User', text: msg });
+      messages.push({ role: 'NexosAi', text: fallbackResponse });
+      displayMessages();
+    }
+    saveMessages(messages);
+    userInput.value = ''; // 
+  }
+}); // Add this line to close the event listener
